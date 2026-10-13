@@ -1,4 +1,3 @@
-# Portfolio
 # Daryl Benson | Portfolio
 
 Personal portfolio for Daryl Benson, talent acquisition lead who builds hiring systems for fast-growing tech companies, and builds recruiting tools with AI.

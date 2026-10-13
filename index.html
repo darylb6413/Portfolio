@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daryl Benson | Talent systems, built with AI</title>
+<meta name="description" content="I partner with fast-growing tech companies to build scalable, high-impact hiring systems. Also building with AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F1; --surface:#FFFFFF; --ink:#18241F; --muted:#56635D;
+  --line:#D3DAD5; --accent:#2F55D4; --accent-ink:#FFFFFF;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#121915; --surface:#1A231E; --ink:#E7ECE8; --muted:#9AA7A0;
+    --line:#2C3832; --accent:#7D9BFF; --accent-ink:#0E1430;
+    color-scheme:dark;
+  }
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;line-height:1.6;
+}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+  outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+
+/* Header */
+header{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0}
+.mark{font-weight:800;text-decoration:none;font-size:1.1rem}
+nav a{margin-left:1.25rem;text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* Hero: the memorable part */
+.hero{display:grid;grid-template-columns:1fr auto;gap:2.5rem;align-items:end;
+  padding:3.5rem 0 4rem;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(2.6rem,7vw,5.6rem);line-height:.98;letter-spacing:-.035em;
+  font-weight:800;margin:0;max-width:14ch}
+.hero p{font-size:1.25rem;color:var(--muted);max-width:38ch;margin:1.5rem 0 2rem}
+.portrait{width:clamp(9rem,20vw,15rem);aspect-ratio:4/5;object-fit:cover;
+  border-radius:999px 999px 1rem 1rem;display:block;background:var(--line)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.8rem 1.3rem;border-radius:.6rem;text-decoration:none;
+  font-weight:600;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+
+/* Sections */
+section{padding:4rem 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(1.8rem,3.5vw,2.6rem);letter-spacing:-.02em;margin:0 0 .5rem;font-weight:800}
+.lede{color:var(--muted);max-width:55ch;margin:0 0 2.5rem}
+
+/* Builds: V1 then V2 is a real sequence */
+.builds{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.5rem}
+.build{background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.75rem;
+  display:flex;flex-direction:column}
+.ver{font-weight:800;font-size:3rem;line-height:1;color:var(--accent);margin-bottom:1rem}
+.build h3{margin:0 0 .5rem;font-size:1.3rem;line-height:1.25}
+.build p{margin:0 0 1.5rem;color:var(--muted)}
+.build a{margin-top:auto;font-weight:600}
+
+/* Talks */
+.talks{list-style:none;margin:0;padding:0}
+.talks li{border-top:1px solid var(--line)}
+.talks li:last-child{border-bottom:1px solid var(--line)}
+.talks a{display:grid;grid-template-columns:1fr auto;gap:1rem;padding:1.15rem 0;text-decoration:none}
+.talks a:hover .t{text-decoration:underline}
+.t{font-weight:600;font-size:1.15rem}
+.where{color:var(--muted);white-space:nowrap}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.links{display:flex;flex-direction:column;gap:.6rem;margin-top:1rem}
+form{display:grid;gap:.9rem}
+label{font-weight:600;font-size:.95rem}
+input,textarea{width:100%;font:inherit;color:var(--ink);background:var(--surface);
+  border:1px solid var(--line);border-radius:.6rem;padding:.75rem .9rem;margin-top:.3rem}
+textarea{min-height:8rem;resize:vertical}
+button{font:inherit;font-weight:600;cursor:pointer;background:var(--accent);color:var(--accent-ink);
+  border:0;border-radius:.6rem;padding:.85rem 1.3rem;justify-self:start}
+.hidden{display:none}
+
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:2rem}
+  .portrait{order:-1;width:8rem}
+  .contact{grid-template-columns:1fr}
+  nav a:not(:last-child){display:none}
+  .talks a{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a class="mark" href="#top">Daryl Benson</a>
+  <nav>
+    <a href="#builds">Builds</a>
+    <a href="#talks">Talks</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div>
+      <h1>I build hiring systems for tech companies that grow fast.</h1>
+      <p>Talent acquisition lead who partners with startups and scale-ups to hire well at speed. Lately I also build the tools myself, with AI.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn" href="https://drive.google.com/file/d/1wxsRAhEmX4Qj1ah7AdNHaUoPqHVsfhu3/view?usp=sharing" target="_blank" rel="noopener">View my CV</a>
+      </div>
+    </div>
+    <!-- Tip: save your photo as me.jpg in this folder and change src to "me.jpg" -->
+    <img class="portrait" src="https://ugc.production.linktr.ee/bf1babc0-3400-4caa-8b75-c3ac10eabcc9_Me-at-retreat.jpeg" alt="Daryl Benson">
+  </div>
+
+  <section id="builds">
+    <h2>Things I've built</h2>
+    <p class="lede">Recruiting tools I built with AI coding assistants to solve problems I hit in my own work.</p>
+    <div class="builds">
+      <article class="build">
+        <div class="ver">V1</div>
+        <h3>Compensation benchmarks at TryHackMe</h3>
+        <p>An internal tool built with Claude Code that shows transparent pay benchmarks for every role across 35 countries.</p>
+        <a href="https://magnificent-cheesecake-11ac89.netlify.app/compensation" target="_blank" rel="noopener">Open the live build</a>
+      </article>
+      <article class="build">
+        <div class="ver">V2</div>
+        <h3>AI Recruiter and Outreach Builder</h3>
+        <p>A Chrome extension that helps recruiters research candidates and draft personal outreach in a few clicks.</p>
+        <!-- TODO: paste the YouTube demo link here -->
+        <a href="#" target="_blank" rel="noopener">Watch the demo</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="talks">
+    <h2>Talks and podcasts</h2>
+    <p class="lede">Conversations about talent acquisition, AI, and breaking into cyber.</p>
+    <ul class="talks">
+      <li><a href="https://leadership-success-community.circle.so/c/enterprise-alchemy-podcast/you-re-not-competing-with-ai-with-daryl-benson-founding-talent-acquisition-lead-cadafea4-66fd-45d7-8085-1fa3a47d21d6" target="_blank" rel="noopener"><span class="t">You're not competing with AI</span><span class="where">Enterprise Alchemy</span></a></li>
+      <li><a href="https://www.youtube.com/watch?v=OIFoOfP58nI&t=508s" target="_blank" rel="noopener"><span class="t">The brutal truth about talent acquisition, AI and startup hiring</span><span class="where">YouTube</span></a></li>
+      <li><a href="https://www.youtube.com/watch?v=CojXvCQdy7Q" target="_blank" rel="noopener"><span class="t">Break into cyber with TryHackMe</span><span class="where">Cyber Talent Unlocked</span></a></li>
+      <li><a href="https://youtu.be/aH0RMysu9lI" target="_blank" rel="noopener"><span class="t">Who TryHackMe is</span><span class="where">YouTube</span></a></li>
+      <li><a href="https://www.youtube.com/watch?v=MDz_CBAq1Ss" target="_blank" rel="noopener"><span class="t">FanDuel on Cord</span><span class="where">YouTube</span></a></li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <h2>Let's talk hiring</h2>
+        <p class="lede">Building a team or rethinking how you hire? Send a note or find me here.</p>
+        <div class="links">
+          <!-- TODO: confirm these three URLs match your real profiles -->
+          <a href="https://www.linkedin.com/in/daryljbenson" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/daryljbenson" target="_blank" rel="noopener">GitHub</a>
+          <a href="#" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <!-- Netlify Forms: works automatically once deployed on Netlify -->
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="company">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden"><label>Leave this empty <input name="company"></label></p>
+        <label>Your name<input name="name" required autocomplete="name"></label>
+        <label>Email<input type="email" name="email" required autocomplete="email"></label>
+        <label>Message<textarea name="message" required></textarea></label>
+        <button type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; <span id="y">2026</span> Daryl Benson</footer>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>

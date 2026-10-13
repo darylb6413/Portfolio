@@ -1,0 +1,29 @@
+# Netlify configuration for Daryl Benson's portfolio
+# Docs: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Static site for now: no build step, publish the repo root.
+  publish = "."
+  # When you move to Astro, change these to:
+  # command = "npm run build"
+  # publish = "dist"
+
+# Security headers for every page
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Short, shareable links you can put on your CV or LinkedIn
+[[redirects]]
+  from = "/cv"
+  to = "https://drive.google.com/file/d/1wxsRAhEmX4Qj1ah7AdNHaUoPqHVsfhu3/view?usp=sharing"
+  status = 302
+
+[[redirects]]
+  from = "/compensation"
+  to = "https://magnificent-cheesecake-11ac89.netlify.app/compensation"
+  status = 302
