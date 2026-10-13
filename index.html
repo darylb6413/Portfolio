@@ -53,14 +53,11 @@ header{display:flex;justify-content:space-between;align-items:center;padding:1.5
 nav a{margin-left:1.25rem;text-decoration:none;color:var(--muted)}
 nav a:hover{color:var(--ink)}
 
-/* Hero: the memorable part */
-.hero{display:grid;grid-template-columns:1fr auto;gap:2.5rem;align-items:end;
-  padding:3.5rem 0 4rem;border-bottom:1px solid var(--line)}
-.hero h1{font-size:clamp(2.6rem,7vw,5.6rem);line-height:.98;letter-spacing:-.035em;
-  font-weight:800;margin:0;max-width:14ch}
-.hero p{font-size:1.25rem;color:var(--muted);max-width:38ch;margin:1.5rem 0 2rem}
-.portrait{width:clamp(9rem,20vw,15rem);aspect-ratio:4/5;object-fit:cover;
-  border-radius:999px 999px 1rem 1rem;display:block;background:var(--line)}
+/* Hero: short and clean */
+.hero{display:flex;align-items:center;gap:clamp(1.5rem,4vw,3rem);padding:4rem 0}
+.portrait{width:clamp(8rem,17vw,13rem);height:auto;aspect-ratio:1;flex:none;display:block}
+.hero h1{font-size:clamp(2.6rem,6.5vw,4.75rem);line-height:1;letter-spacing:-.035em;font-weight:800;margin:0}
+.hero p{font-size:1.25rem;color:var(--muted);margin:.75rem 0 1.5rem;max-width:34ch}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem}
 .btn{display:inline-block;padding:.8rem 1.3rem;border-radius:.6rem;text-decoration:none;
   font-weight:600;border:1.5px solid var(--ink)}
@@ -72,12 +69,17 @@ h2{font-size:clamp(1.8rem,3.5vw,2.6rem);letter-spacing:-.02em;margin:0 0 .5rem;f
 .lede{color:var(--muted);max-width:55ch;margin:0 0 2.5rem}
 
 /* Results strip */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:0;
+.stats{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:0;
   border-bottom:1px solid var(--line)}
 .stat{padding:2rem 1.5rem 2rem 0}
 .stat+.stat{padding-left:1.5rem;border-left:1px solid var(--line)}
-.num{font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:800;letter-spacing:-.03em;line-height:1}
+.num{white-space:nowrap;font-size:clamp(2.4rem,4.5vw,3.4rem);font-weight:800;letter-spacing:-.03em;line-height:1}
 .stat p{margin:.6rem 0 0;color:var(--muted);font-size:1rem;max-width:22ch}
+
+/* CV prompt under the stats */
+.cv{display:flex;justify-content:space-between;align-items:center;gap:1rem 2rem;flex-wrap:wrap;
+  padding:1.75rem 0;border-bottom:1px solid var(--line)}
+.cv p{margin:0;font-size:1.2rem;font-weight:600}
 
 /* How I work */
 .work{display:grid;grid-template-columns:repeat(auto-fit,minmax(19rem,1fr));gap:2.5rem 3rem}
@@ -117,8 +119,8 @@ button{font:inherit;font-weight:600;cursor:pointer;background:var(--accent);colo
 footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
 
 @media (max-width:760px){
-  .hero{grid-template-columns:1fr;padding-top:2rem}
-  .portrait{order:-1;width:8rem}
+  .hero{flex-direction:column;align-items:flex-start;padding:2rem 0 3rem}
+  .portrait{width:7.5rem}
   .contact{grid-template-columns:1fr}
   nav a:not(:last-child){display:none}
   .talks a{grid-template-columns:1fr}
@@ -142,22 +144,25 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
 
 <main id="top">
   <div class="hero">
+    <img class="portrait" src="me.png" alt="Daryl Benson" width="630" height="630">
     <div>
-      <h1>I build hiring systems for tech companies that grow fast.</h1>
-      <p>Founding talent acquisition lead who scaled TryHackMe from 50 to 200 people across 34 countries. Lately I also build the recruiting tools myself, with AI.</p>
+      <h1>Daryl Benson</h1>
+      <p>Talent acquisition lead. I build hiring systems for fast-growing tech companies, with AI.</p>
       <div class="actions">
         <a class="btn primary" href="#contact">Get in touch</a>
-        <a class="btn" href="https://drive.google.com/file/d/1wxsRAhEmX4Qj1ah7AdNHaUoPqHVsfhu3/view?usp=sharing" target="_blank" rel="noopener">View my CV</a>
       </div>
     </div>
-    <img class="portrait" src="me.jpg" alt="Daryl Benson" width="800" height="1000">
   </div>
 
   <div class="stats" aria-label="Results">
-    <div class="stat"><div class="num">50 to 200</div><p>Headcount scaled at TryHackMe, across 34 countries</p></div>
-    <div class="stat"><div class="num">$18m to $55m</div><p>ARR growth during that scale-up</p></div>
+    <div class="stat"><div class="num">200</div><p>People at TryHackMe, scaled from 50 across 34 countries</p></div>
+    <div class="stat"><div class="num">$55m</div><p>ARR, up from $18m during that scale-up</p></div>
     <div class="stat"><div class="num">120</div><p>Hires made solo in my first year</p></div>
     <div class="stat"><div class="num">&lt;5%</div><p>Roles filled by agencies, down from almost 100%</p></div>
+  </div>
+  <div class="cv">
+    <p>That's the headline. The full story is in my CV.</p>
+    <a class="btn primary" href="https://drive.google.com/file/d/1wxsRAhEmX4Qj1ah7AdNHaUoPqHVsfhu3/view?usp=sharing" target="_blank" rel="noopener">Read my CV</a>
   </div>
 
   <section id="work">
