@@ -49,8 +49,9 @@ nav a:hover{color:var(--ink)}
 .hero h1{font-size:clamp(2.6rem,7vw,5.6rem);line-height:.98;letter-spacing:-.035em;
   font-weight:800;margin:0;max-width:14ch}
 .hero p{font-size:1.25rem;color:var(--muted);max-width:38ch;margin:1.5rem 0 2rem}
-.portrait{width:clamp(9rem,20vw,15rem);aspect-ratio:4/5;object-fit:cover;
-  border-radius:999px 999px 1rem 1rem;display:block;background:var(--line)}
+.portrait{width:clamp(11rem,24vw,18rem);aspect-ratio:1;object-fit:cover;object-position:center 30%;
+  border-radius:50%;display:block;background:var(--line);align-self:center;justify-self:center;
+  box-shadow:0 0 0 6px var(--surface),0 0 0 7px var(--line)}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem}
 .btn{display:inline-block;padding:.8rem 1.3rem;border-radius:.6rem;text-decoration:none;
   font-weight:600;border:1.5px solid var(--ink)}
@@ -95,7 +96,7 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
 
 @media (max-width:760px){
   .hero{grid-template-columns:1fr;padding-top:2rem}
-  .portrait{order:-1;width:8rem}
+  .portrait{order:-1;width:11rem;margin:0 auto}
   .contact{grid-template-columns:1fr}
   nav a:not(:last-child){display:none}
   .talks a{grid-template-columns:1fr}
